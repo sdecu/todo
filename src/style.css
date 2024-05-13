@@ -1,0 +1,70 @@
+:root   {
+    --gruvbox-dark-bg: #282828;
+    --gruvbox-dark-fg: #ebdbb2;
+    --gruvbox-dark-red: #cc241d;
+    --gruvbox-dark-green: #98971a;
+    --gruvbox-dark-yellow: #d79921;
+    --gruvbox-dark-blue: #458588;
+    --gruvbox-dark-purple: #b16286;
+    --gruvbox-dark-aqua: #689d6a;
+    --gruvbox-dark-orange: #d65d0e;
+    --gruvbox-dark-gray: #a89984;
+  }
+
+body   {
+    background-color: var(--gruvbox-dark-fg);
+    margin: 0;
+    padding: 0;
+}
+
+#content    {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+header  {
+    display: flex;
+    justify-content: center;
+    background-color: #1d2021;
+}
+
+header h1   {
+    color: var(--gruvbox-dark-fg);
+}
+
+nav {
+    width: fit-content;
+    background-color: #458588;
+    height: 100vh;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+  }
+
+  ul a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #504945;
+    color: #b16286;
+  }
+
+  ul a:hover {
+    background-color: #504945;
+    color: #b16286;
+  }
