@@ -13,8 +13,8 @@
      <div id="content">
          <nav>
             <ul>
-                <li>Projects <span class="remove">delete</span><span class="add">add</span></li>
-                <li><a href="">Home</a></li>
+                <li>Projects <span class="add">add</span></li>
+                <li><a href="">Home<span class="remove">delete</span></a></li>
             </ul>
         </nav>
 
@@ -24,12 +24,22 @@
                 <h2>example</h2>
                 <div class="plus">plus</div>
               </header>
-              <div class="content">
+              <div class="todo">
                 <p>Lorem ipsum dolor</p>
                 <div class="delete">delete</div>
               </div>
             </article>
           </section>
     </div>
+
+    <dialog class="modal" id="modal">
+      <h2>Create a new project</h2>
+      <button class="button close-button">close</button>
+      <form class="form" method="dialog">
+        <label>ProjectName: <input type="text"></label>
+        <button class="button" type="submit">submit</button>
+      </form>
+    
+    </dialog>
 </body>
 </html>

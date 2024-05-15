@@ -34,13 +34,15 @@ const element = document.querySelector('.card-list')
           </section>
 */
 
+let projectIndex = 0;
 
+//function to create new project
 
 function createNewProject (projectName) {
   const section = document.querySelector('section');
   
   const card = document.createElement('article');
-  card.classList.add('card1');
+  card.classList.add('card');
   section.appendChild(card);
 
   const header = document.createElement('header');
@@ -55,24 +57,25 @@ function createNewProject (projectName) {
   header.appendChild(projectNameHeading);
 
   const plusText = document.createElement('div');
-  plusText.classList.add('plus');
+  plusText.classList.add(`plus`);
+  plusText.classList.add(Date.now());
   plusText.textContent = 'plus';
   header.appendChild(plusText);
   return {
     card
   }
-
-  
-
   ;
 }
 
+//function to create new task
+
 createNewProject('test');
 
-function createNewTask  (task)  {
+function createNewTask  (element, task)  {
+  const card = getCard(element)
+
   const todo = document.createElement('div');
   todo.classList.add('content');
-  createNewProject.card.appendChild(todo);
 
   const todoP = document.createElement('p');
   todoP.textContent = task;
@@ -82,6 +85,26 @@ function createNewTask  (task)  {
   todoDelete.classList.add("delete");
   todoDelete.textContent = 'delete';
   todo.appendChild(todoDelete);
+
+  card.appendChild(todo);
 }
 
-createNewTask('example');
+//add button functionality
+
+
+function getCard(element) {
+  const plus = element.getAttribute('class');
+  const temp = document.getElementsByClassName(plus);
+  const plusEl = temp[0]
+  const card = plusEl.closest('.card');
+  console.log(card);
+  return card
+}
+
+const plusArr = document.querySelectorAll('.plus');
+
+for (let element of plusArr) {
+  element.onclick = function() {
+    createNewTask(element, 'example')
+  }
+  };
